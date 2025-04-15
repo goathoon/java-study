@@ -6,13 +6,20 @@ import java.util.concurrent.*;
 import static thread.util.MyLogger.log;
 import static thread.util.ThreadUtils.sleep;
 
-public class CallableMainV1 {
+public class CallableMainV2 {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService es = Executors.newFixedThreadPool(1);
+        log("submit() 호출");
         Future<Integer> future = es.submit(new MyCallabe());
+        log("future 즉시 반환, future = " + future);
+
+        log("future.get() [블로킹] 메서드 호출 시작 -> main 스레드 WAITING");
         Integer result = future.get();
-        log("result value = "+ result);
+        log("future.get() [블로킹] 메서드 호출 완료 -> main 스레드 RUNNABLE");
+
+        log("result value = " + result);
+        log("future 완료, future = " + future);
         es.close();
     }
 
