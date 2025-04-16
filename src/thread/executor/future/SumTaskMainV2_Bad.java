@@ -13,6 +13,8 @@ public class SumTaskMainV2_Bad {
         Future<Integer> future1 = es.submit(task1);
         Integer sum1 = future1.get();
 
+        // or es.submit(task1).get();
+
         Future<Integer> future2 = es.submit(task2);
         Integer sum2 = future2.get();
 
