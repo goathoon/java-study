@@ -1,0 +1,18 @@
+package java1.cas.increment;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class MyAtomicInteger implements IncrementInteger {
+
+    private AtomicInteger atomicInteger = new AtomicInteger();
+
+    @Override
+    public void increment() {
+        atomicInteger.incrementAndGet();
+    }
+
+    @Override
+    public int get() {
+        return atomicInteger.get();
+    }
+}
