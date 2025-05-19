@@ -14,9 +14,11 @@ public class DataMemberRepository implements MemberRepository {
     @Override
     public void add(Member member) throws IOException {
         try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(FILE_PATH, true))) {
-            dos.writeUTF(member.getId());
-            dos.writeUTF(member.getName());
-            dos.writeInt(member.getAge());
+            for (int i = 0; i < 10000000; i++) {
+                dos.writeUTF(member.getId());
+                dos.writeUTF(member.getName());
+                dos.writeInt(member.getAge());
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
