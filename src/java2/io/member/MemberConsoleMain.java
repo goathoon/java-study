@@ -1,5 +1,6 @@
 package java2.io.member;
 
+import java2.io.member.impl.DataMemberRepository;
 import java2.io.member.impl.FileMemberRepository;
 import java2.io.member.impl.MemoryMemberRepository;
 
@@ -9,7 +10,8 @@ import java.util.Scanner;
 
 public class MemberConsoleMain {
 
-    private static final MemberRepository repository = new FileMemberRepository();
+//    private static final MemberRepository repository = new FileMemberRepository();
+    private static final MemberRepository repository = new DataMemberRepository();
 
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
