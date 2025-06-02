@@ -45,7 +45,7 @@ public class SessionV6 implements Runnable {
         } catch (IOException e) {
             log(e);
         } finally {
-            sessionManager.remove(this);
+            sessionManager.remove(this); // 클라이언트가 종료할때 필수적으로 정리되어야함! 서버 종료시에는 굳이 필요없긴함
             close();
         }
 
