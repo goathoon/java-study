@@ -3,6 +3,7 @@ package java2.network.tcp.chatting;
 import java2.network.tcp.SocketCloseUtil;
 
 import java.io.DataInputStream;
+import java.io.IOException;
 import java.net.Socket;
 
 import static java2.util.MyLogger.log;
@@ -21,12 +22,15 @@ public class ClientReadSession implements Runnable {
     @Override
     public void run() {
         while (running) {
+            String received = null;
             try {
-                String received = input.readUTF();
-                System.out.println(received);
-            } catch (Exception e) {
+                received = input.readUTF();
+            } catch (IOException e) {
                 log(e);
+                running = false;
+                break;
             }
+            System.out.println(received);
         }
     }
 

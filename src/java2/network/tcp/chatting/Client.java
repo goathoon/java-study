@@ -16,7 +16,7 @@ public class Client {
 
     private static final int PORT = 12345;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException, IOException {
         Scanner scanner = new Scanner(System.in);
 
         log("클라이언트 시작");
@@ -57,7 +57,7 @@ public class Client {
             log("채팅 시작! 이름 : [ " + name + " ]");
 
             while (true) {
-                System.out.print("채팅을 입력하세요: ");
+//                System.out.print("채팅을 입력하세요: ");
                 String toSend;
                 try {
                     toSend = scanner.nextLine();
@@ -74,8 +74,6 @@ public class Client {
                     break;
                 }
             }
-        } catch (IOException | InterruptedException e) {
-            log(e);
         } finally {
             clientReadSession.stop();
             closeAll(socket, input, output);
