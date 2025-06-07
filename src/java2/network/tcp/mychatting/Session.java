@@ -1,9 +1,7 @@
-package java2.network.tcp.chatting;
+package java2.network.tcp.mychatting;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.Objects;
-import java.util.UUID;
 
 import static java2.network.tcp.SocketCloseUtil.closeAll;
 import static java2.util.MyLogger.log;

@@ -1,4 +1,4 @@
-package java2.network.tcp.chatting;
+package java2.network.tcp.mychatting;
 
 import java.io.IOException;
 import java.util.ArrayList;

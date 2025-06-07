@@ -1,13 +1,10 @@
-package java2.network.tcp.chatting;
-
-import java2.network.tcp.SocketCloseUtil;
+package java2.network.tcp.mychatting;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
-import java.util.UUID;
 
 import static java2.network.tcp.SocketCloseUtil.closeAll;
 import static java2.util.MyLogger.log;
